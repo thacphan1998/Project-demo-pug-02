@@ -1,0 +1,287 @@
+.footer {
+  position: relative;
+}
+
+.wrapLogoFooter {
+  position: absolute;
+  padding: 18px 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 999;
+  img {
+    width: 142px;
+  }
+}
+.wrapBackgroundLogoFooter {
+  img {
+    width: 100%;
+    height: auto;
+    transform: rotate(180deg);
+  }
+}
+
+.contentItem {
+  padding-top: 26px;
+  padding-bottom: 30px;
+}
+
+.titleFooter {
+  position: relative;
+  font-size: 26px;
+  font-family: $nameFont1;
+  color: $color2;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 25px;
+  margin-bottom: 20px;
+}
+
+.contact {
+  a {
+    color: $color2;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  span {
+    font-weight: 600;
+  }
+}
+
+.viewFacebookContentItem {
+  position: relative;
+  background-image: url('../images/slide/3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 150px;
+  width: 100%;
+}
+.backgroundGradient {
+  background: linear-gradient(rgba(0, 0, 0, 0.2) 100%, rgba(0, 0, 0, 0) 0%);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.topContent {
+  padding: 8px;
+  .wrapImgLogoBoxView {
+    float: left;
+    margin-right: 8px;
+    img {
+      border: 2px solid #fff;
+    }
+  }
+  .titleBoxViewFacebook {
+    a {
+      color: $color1;
+      font-size: 20px;
+    }
+  }
+  .numberLike {
+    font-size: 14px;
+    color: $color1;
+  }
+}
+.bottomContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px;
+  .boxLikePageFaceBook {
+    font-size: 14px;
+    background-color: $color1;
+    float: left;
+    padding: 3px 5px;
+    @include borderRadius(2px);
+    span {
+      color: $color11;
+    }
+  }
+  .boxShare {
+    background-color: $color1;
+    font-size: 14px;
+    float: right;
+    padding: 3px 5px;
+    @include borderRadius(2px);
+
+    span {
+      color: $color11;
+    }
+  }
+  svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    &.iconFace {
+      fill: $color18;
+    }
+    &.iconShare {
+      fill: $color11;
+    }
+  }
+}
+.socialLinkItem {
+  margin-top: 20px;
+  .linkIcon {
+    border-radius: 100%;
+    width: 43px;
+    height: 45px;
+    padding: 12px;
+    margin-right: 15px;
+    &:last-child {
+      margin-right: 0;
+    }
+    &.facebookIcon {
+      background-color: $color3;
+      border-color: $color3;
+    }
+    &.youtubeIcon {
+      background-color: $color25;
+      border-color: $color25;
+    }
+    &.instagramIcon {
+      background-color: $color26;
+      border-color: $color26;
+    }
+    &.twitterIcon {
+      background-color: $color28;
+      border-color: $color28;
+    }
+  }
+  svg {
+    display: inline-block;
+    fill: $color1;
+    width: 20px;
+    height: 30px;
+    @include translate(0, -2px);
+  }
+}
+.wrapImgcardItem {
+  margin-top: 20px;
+  img {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.boxReview {
+  width: 250px;
+  height: auto;
+  border: 2px $color29 solid;
+  padding: 5px;
+  .imgReview {
+    width: 140px;
+    height: auto;
+    display: block;
+  }
+  .reviewTitleLink {
+    font-size: 18px;
+    color: $color2;
+    font-weight: 600;
+  }
+  .reviewText {
+    color: #777;
+    font-size: 16px;
+    margin: 0;
+    line-height: 28px;
+  }
+  .wrapReviewLink {
+    position: relative;
+    display: inline-flex;
+    gap: 10px;
+    ::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 5px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $color29;
+      height: 15px;
+      width: 2px;
+    }
+    a {
+      color: $color2;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .footer {
+    .bgItem {
+      padding: 30px 0 0 0;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .footer {
+    .wrapLogoFooter {
+      top: -3px;
+    }
+    .wrapBackgroundLogoFooter {
+      img {
+        height: 80px;
+      }
+    }
+  }
+  .titleFooter,
+  .contact {
+    text-align: center;
+  }
+  .wrapImgcardItem {
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    img {
+      max-width: 350px;
+    }
+  }
+  .boxReview {
+    margin: auto;
+    margin-top: 0px;
+  }
+  .socialLinkItem {
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .boxReview {
+    margin: auto;
+    margin: 30px auto;
+  }
+  .socialLinkItem {
+    text-align: center;
+  }
+  .wrapImgcardItem {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer {
+    .wrapLogoFooter {
+      top: -14px;
+      img {
+        width: 100px;
+      }
+    }
+    .wrapBackgroundLogoFooter {
+      img {
+        height: 50px;
+      }
+    }
+    .boxReview {
+      margin: auto;
+      margin: 30px auto;
+    }
+  }
+}

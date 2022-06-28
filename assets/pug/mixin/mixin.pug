@@ -1,0 +1,129 @@
+mixin head_setting(data_page)
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(http-equiv='x-ua-compatible' content='ie=edge')
+    |
+    |
+    title= data_page.title_page +' | '+ data.general.title_website
+    |
+    |
+    link(rel='shortcut icon' type='image/png' href= data.general.url_favicon)
+    link(rel='icon' type='image/png' href= data.general.url_favicon)
+    |
+    |
+    meta(property='og:title' content= data_page.title_page +' | '+ data.general.title_website)
+    meta(name='description' content= data.general.description_website +', '+ data_page.description_page)
+    meta(name='keywords' content= data.general.keywords_website +', '+ data_page.keywords_page)
+    link(rel='image_src' type='image/jpg' href= data_page.url_image_page)
+    |
+    |
+    meta(property='og:url' content= data.general.url_website)
+    meta(property='og:type' content='website')
+    meta(property='og:description' content= data.general.description_website +', '+ data_page.description_page)
+    meta(property='og:image' content= data_page.url_image_page)
+    meta(property='og:image:alt' content= data_page.title_page +' | '+ data.general.title_website)
+    meta(property='og:type' content='website')
+    |
+    |
+    meta(name='twitter:title' content= data_page.title_page +' | '+ data.general.title_website)
+    meta(name='twitter:card' content= data_page.url_image_page)
+    meta(name='twitter:description' content= data.general.description_website +', '+ data_page.description_page)
+    meta(name='twitter:image' content= data_page.url_image_page)
+    |
+    |
+    meta(name='dc.publisher' content= data.general.title_website)
+    meta(name='dc.rights.copyright' content= data.general.title_website)
+    meta(name='dc.creator.name' content= data.general.title_website)
+    |
+    |
+    meta(name='robots' content='noindex, follow')
+    meta(name='revisit-after' content='3 days')
+    meta(name='rating' content='general')
+    link(rel='alternate' href= data.general.url_website hreflang= data.general.hreflang_website)
+    link(href= data.general.url_website rel='canonical')
+    meta(name='copyright' content= data.general.title_website)
+    meta(name='author' content= data.general.title_website)
+    |
+    |
+    // CSS
+    each item in data_page.link_css_page
+        link(rel='stylesheet' type='text/css' href= 'css/'+ item +'.css')
+
+mixin render_svg(view, data)
+    svg(aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg', viewbox= view)
+        path(fill='currentColor', d= data)
+
+mixin render_link_js(data_page)
+    // JS
+    each item in data_page.link_js_page
+        script(src='js/'+ item +'.js')
+    // end JS
+
+mixin render_link_logo(data)
+    a.linkLogoHeader(href='index.html', title= data.general.title_website)
+        img.imgLogoHeader(src= data.header.logo, alt= data.general.title_website)
+
+mixin render_title(title_main, title_sub)
+    .wrapTitleItem 
+        h2.titleMain.titleMainItem1= title_main
+        p.titleSub.titleSubItem1= title_sub
+
+mixin render_title(title_sub, title_main)
+    .wraptitleMain
+        p.titleSub= title_sub
+        h2.titleMain= title_main
+   
+
+
+mixin menu_main(data)
+    .wrapMenuHeader
+        ul.listMenuHeader
+            each item in data
+                - var check_scroll = item.scroll;
+
+                if item.children
+                    li.itemMenuHeader.menuSub   
+                        a.linkMenuHeader(href= item.link, title= item.title, class=check_scroll ? 'scroll' : '')= item.title
+                            img(src= item.img_icon, alt="")
+                            
+                        a.btnDropdownMenuSub(href='javascript:void(0);' title='Dropdown')
+                            svg(aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 320 512')
+                                path(fill='currentColor' d='M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z')
+
+
+                        +menu_main(item.children)
+                else
+                    li.itemMenuHeader
+                        a.linkMenuHeader(href= item.link, title= item.title, class=check_scroll ? 'scroll' : '')= item.title
+                            img(src= item.img_icon, alt="")
+
+
+    
+                    
+
+mixin render_paging(quantily = 5)
+    - var number_paging = 0;
+
+    .clearfix.wrapPaggingList
+        a.linkPagging.prev(href='#' title='Previus')
+            span
+                svg(aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 256 512')
+                    path(fill='currentColor' d='M231.293 473.899l19.799-19.799c4.686-4.686 4.686-12.284 0-16.971L70.393 256 251.092 74.87c4.686-4.686 4.686-12.284 0-16.971L231.293 38.1c-4.686-4.686-12.284-4.686-16.971 0L4.908 247.515c-4.686 4.686-4.686 12.284 0 16.971L214.322 473.9c4.687 4.686 12.285 4.686 16.971-.001z')
+
+        while number_paging < quantily
+            a.linkPagging(href='javascript:void(0);' title='1' class= number_paging == 0 ? 'active' : '')
+                if number_paging++ < 9
+                    span= '0'+ number_paging
+                else
+                    span= number_paging
+
+        a.linkPagging.next(href='#' title='Next')
+            span
+                svg(aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 256 512')
+                    path(fill='currentColor' d='M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z')
+
+
+
+
+
+

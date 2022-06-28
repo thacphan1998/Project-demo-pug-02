@@ -1,0 +1,101 @@
+.wrapSlideMain {
+  position: relative;
+}
+
+.slick-list {
+  width: 100%;
+}
+// form book room
+
+.wrapBookRoom {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  width: 238px;
+  transform: translate(0, -50%);
+  background-color: $color22;
+  @include borderRadius(5px);
+  padding: 10px;
+}
+
+// book room
+.wrapBookRoom {
+  .formContent {
+    .inputItem {
+      font-size: 14px;
+    }
+  }
+
+  .contentItem {
+    background-color: $color1;
+    @include borderRadius(10px);
+    padding: 30px;
+    @include boxShadow($boxShadow3);
+    margin-top: 30px;
+  }
+
+  .btnBook {
+    display: block;
+    width: 100%;
+    background-color: $color9;
+    @include borderRadius(5px);
+    padding: 8px 15px;
+    margin: 10px 0 0;
+    &:hover {
+      opacity: 0.6;
+      border-color: $color9;
+    }
+  }
+
+  .titleSubBookRoom {
+    font-size: 14px;
+  }
+  .titleMainBookRoom {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 30px;
+    margin: 0;
+    text-transform: uppercase;
+  }
+}
+
+// end book room
+
+@media (min-width: 1200px) {
+  .wrapImgSlideMain {
+    height: calc(100vh - 125px);
+  }
+}
+
+@media (max-width: 1199px) {
+  .wrapImgSlideMain {
+    height: calc(100vh - 70px);
+  }
+  .wrapBookRoom {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .wrapImgSlideMain {
+    padding-top: 60%;
+    height: auto;
+  }
+}
+
+@media (max-width: 1199px) {
+  .btnSlideType1 {
+    width: 35px;
+    height: 35px;
+    top: 50%;
+    &.right {
+      right: 15px;
+      left: auto;
+    }
+    svg {
+      width: 16px;
+      height: 36px;
+      display: inline-block;
+    }
+  }
+}

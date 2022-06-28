@@ -1,0 +1,49 @@
+// header
+header.wrapHeader
+    .contentHeader
+        .headerTop
+            .container-xl.containerHeaderTop
+                .wrapLogoHeader
+                    +render_link_logo(data)
+                .controlRight
+                    .wrapLanguage
+                        .contentLanguage
+                            .titleLanguage
+                                img(src='images/language/vi.jpg' alt='Việt Nam')
+
+                                .btnDropdownLanguage
+                                    svg(aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 256 512')
+                                        path(fill='currentColor' d='M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z')
+
+                            .dropdownLanguage
+                                .contentDropdown
+                                    each item in data.header.language
+                                        a(href='javascript:void(0);', title= item.title)
+                                            img(src= item.url_img alt= item.title)
+                    .wrapBtnCtrMenuHeader
+                        .btnCtrMenu
+                            svg.iconOpen(aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 448 512')
+                                path(fill='currentColor' d='M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z')
+                            |
+                            svg.iconClose(aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 320 512')
+                                path(fill='currentColor' d='M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z')                        
+        .headerBottom
+            .container-xl
+                .contentHeaderBottom
+                    .wrapCloseMenuHeaderMobile
+
+                    .wrapMenuMainHeader
+                        +menu_main(data.header.menu)
+                        .wrapContactHeader 
+                            span.linkContactItem
+                                svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512")
+                                    path(d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z")                        
+                                a(href='javascript:void(0);' title='02583885789') 02583885789
+                            a.linkContactItem(href='javascript:void(0);' title='86A Tran phu Str, Loc tho Ward, Nha Trang City, Khanh Hoa Pro, Vietnam.')
+                                svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512")
+                                    path(d="M436 160c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h320c26.5 0 48-21.5 48-48v-48h20c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20v-64h20c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20v-64h20zm-228-32c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zm112 236.8c0 10.6-10 19.2-22.4 19.2H118.4C106 384 96 375.4 96 364.8v-19.2c0-31.8 30.1-57.6 67.2-57.6h5c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h5c37.1 0 67.2 25.8 67.2 57.6v19.2z")
+                                | 86A Tran phu Str, Loc tho Ward, Nha Trang City, Khanh Hoa Pro, Vietnam.
+                        
+
+// end header
+

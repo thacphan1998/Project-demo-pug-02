@@ -1,0 +1,141 @@
+// sub
+.titleSubItem1 {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  color: $color20;
+  text-transform: uppercase;
+  margin: auto auto 10px auto;
+  display: table;
+  position: relative;
+}
+
+.titleLeft {
+  .titleSubItem1 {
+    margin-left: 0;
+  }
+}
+// end sub
+
+// main
+.titleMainItem2,
+.titleMainItem1 {
+  font-size: 40px;
+  line-height: 42px;
+  font-weight: 700;
+  color: $color16;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: $nameFont2;
+  text-align: center;
+}
+
+.titleMainItem2 {
+  text-align: center;
+  color: $color1;
+}
+
+.titleWhite {
+  .titleMainItem1 {
+    color: $color1;
+  }
+}
+
+.titleLeft {
+  .titleMainItem1 {
+    text-align: left;
+  }
+}
+
+@media (max-width: 991px) {
+  .titleMainItem2,
+  .titleMainItem1 {
+    font-size: 30px;
+    line-height: 54px;
+  }
+}
+
+@media (max-width: 575px) {
+  .titleMainItem2,
+  .titleMainItem1 {
+    font-size: 20px;
+    line-height: 44px;
+  }
+}
+
+// end main
+// normal
+.titleItem5,
+.titleItem4,
+.titleItem3,
+.titleItem2,
+.titleItem1,
+.linkTitleItem3,
+.linkTitleItem2,
+.linkTitleItem1 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: $color2;
+  display: block;
+  @include transition(0.5s);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.titleItem2,
+.linkTitleItem2 {
+  text-align: center;
+  color: $color1;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.linkTitleItem3 {
+  font-size: 18px;
+  line-height: 24px;
+
+  &:hover {
+    color: $color20;
+  }
+}
+
+.titleItem4,
+.titleItem3 {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.titleItem4 {
+  position: relative;
+  padding-bottom: 10px;
+  font-family: $nameFont2;
+}
+
+.titleItem5 {
+  font-size: 20px;
+  line-height: 26px;
+  text-transform: capitalize;
+}
+// end normal
+
+// extend title
+
+.titleSub {
+  font-weight: 600;
+  color: #8b0021;
+  text-transform: uppercase;
+  margin: 0 0 5px 0;
+  display: table;
+  padding-bottom: 4px;
+  position: relative;
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 75%;
+    height: 3px;
+    background-color: #8b0021;
+  }
+}
